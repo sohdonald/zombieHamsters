@@ -27,6 +27,45 @@ this should be a good opportunity to practice fetch
 all the Object. are static methods,
 What is a static method?
 
+
+Object.fromEntries only useful for form elements
+
 */
 
 // code here
+
+const zombieSpace = document.querySelector("#hamster-zombieSpace");
+const zombieCard = document.createElement("div");
+zombieCard.setAttribute("class", "card");
+
+/* zombieSpace selects html element with id= hamster-zombieSpace
+    zombieCard creates the div element
+*/ 
+function createZombieCard(zombie) {
+    // create html img element, needs the key zombieImage
+    // input action output
+    const zombieImage = document.createElement("img");
+    // create img html element out of zombieImage
+    const zombieImageSite = zombie.zombieImage
+    zombieImage.setAttribute("src", zombieImageSite)
+    zombieImage.setAttribute("class", "funnyImage")
+    const zombieDiv = document.querySelector("#hamster-zombieSpace")
+    zombieDiv.append(zombieImage)
+    //return zombieImage;
+} // createZombieCard end
+
+function renderZombies() {
+    fetch("http://localhost:3000/zombieHamsters")
+    .then((res) => res.json())
+    .then( (zombieHamsters) => {
+        console.log(zombieHamsters);
+        zombieHamsters.forEach(element => {
+            createZombieCard(element) 
+        });
+    })
+} // renderZombies end
+
+renderZombies();
+
+/* try making 4 zombie hamsters appear on the website 
+    need to make sure we are only selecting the zombies*/

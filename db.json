@@ -34,11 +34,11 @@
         }
     ],
     
-    "ZombieHamsters": [
+    "zombieHamsters": [
         {
             "id": 0,
-            "zombieName": "Munchy",
-            "zombieImage": "./zombieHamsterImages/zombies/munchy.png",
+            "zombieName": "Muncher",
+            "zombieImage": "./zombieHamsterImages/zombies/muncher.png",
             "zombieHp": 30
         },
         {
