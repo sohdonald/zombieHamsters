@@ -1,0 +1,63 @@
+{
+    "NakedMoleHeroes": [
+        {
+            "id": 0,
+            "heroName": "Bean",
+            "heroImg": "./zombieHamsterImages/heroes/bean.png",
+            "heroStartHp": 25,
+            "heroLevel": 0,
+            "heroExp": 0
+        },
+
+        {
+            "id": 1,
+            "heroName": "Pillow",
+            "heroImg": "./zombieHamsterImages/heroes/pillow.png",
+            "heroStartHp": 18,
+            "heroLevel": 0,
+            "heroExp": 0
+        },
+        {
+            "id": 2,
+            "heroName": "Squishy",
+            "heroImg": "./zombieHamsterImages/heroes/squishy.png",
+            "heroStartHp": 30,
+            "heroLevel": 0
+        },
+        {
+            "id": 3,
+            "heroName": "Ketchup",
+            "heroImg": "./zombieHamsterImages/heroes/ketchup.png",
+            "heroStartHp": 16,
+            "heroLevel": 0,
+            "heroExp": 0
+        }
+    ],
+    
+    "ZombieHamsters": [
+        {
+            "id": 0,
+            "zombieName": "Munchy",
+            "zombieImage": "./zombieHamsterImages/zombies/munchy.png",
+            "zombieHp": 30
+        },
+        {
+            "id": 1,
+            "zombieName": "Bacon",
+            "zombieImage": "./zombieHamsterImages/zombies/bacon.png",
+            "zombieHp": 46
+        },
+        {
+            "id": 2,
+            "zombieName": "Freebie",
+            "zombieImage": "./zombieHamsterImages/zombies/freebie.png",
+            "zombieHp": 8
+        },
+        {
+            "id": 3,
+            "zombieName": "Crunchy",
+            "zombieImage": "./zombieHamsterImages/zombies/crunchy.png",
+            "zombieHp": 35
+        }
+    ]
+}
