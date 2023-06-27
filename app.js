@@ -34,13 +34,6 @@ Object.fromEntries only useful for form elements
 
 // code here
 
-const zombieSpace = document.querySelector("#hamster-zombieSpace");
-const zombieCard = document.createElement("div");
-zombieCard.setAttribute("class", "card");
-
-/* zombieSpace selects html element with id= hamster-zombieSpace
-    zombieCard creates the div element
-*/ 
 function createZombieCard(zombie) {
     // create html img element, needs the key zombieImage
     // input action output
@@ -51,7 +44,6 @@ function createZombieCard(zombie) {
     zombieImage.setAttribute("class", "funnyImage")
     const zombieDiv = document.querySelector("#hamster-zombieSpace")
     zombieDiv.append(zombieImage)
-    //return zombieImage;
 } // createZombieCard end
 
 function renderZombies() {
@@ -69,3 +61,28 @@ renderZombies();
 
 /* try making 4 zombie hamsters appear on the website 
     need to make sure we are only selecting the zombies*/
+    
+    function createHeroCard(hero) {
+        // create html img element, needs the key zombieImage
+        // input action output
+        const heroImage = document.createElement("img");
+        // create img html element out of zombieImage
+        const heroImageSite = hero.heroImg
+        heroImage.setAttribute("src", heroImageSite)
+        heroImage.setAttribute("class", "funnyImage")
+        const heroDiv = document.querySelector("#heroSpace")
+        heroDiv.append(heroImage)
+    } // createHeroCard end
+
+    function renderHeroes() {
+        fetch("http://localhost:3000/nakedMoleHeroes")
+        .then((res) => res.json())
+        .then( (moleHeroes) => {
+            console.log(moleHeroes);
+            moleHeroes.forEach(element => {
+                createHeroCard(element) 
+            });
+        })
+    } // renderZombies end
+
+    renderHeroes();
