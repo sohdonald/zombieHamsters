@@ -1,9 +1,7 @@
 /* my notes here
 
 practice .target and Object types here
-
 db.json has Zombie hamsters and heroes to fight them
-
 
 can we use e.target to decrease the zombieHp every
 time a hero attacks a zombie?
@@ -26,7 +24,6 @@ this should be a good opportunity to practice fetch
 
 all the Object. are static methods,
 What is a static method?
-
 
 Object.fromEntries only useful for form elements
 
@@ -81,8 +78,21 @@ renderZombies();
             console.log(moleHeroes);
             moleHeroes.forEach(element => {
                 createHeroCard(element) 
-            });
-        })
-    } // renderZombies end
+            }); // forEach end
+        }) // 2nd .then end
+    } // renderHeroes end
 
     renderHeroes();
+
+    // make a button to allow a hero to attack a zombie
+    const attackButton = document.createElement("button")
+    attackButton.setAttribute("id", zombieId)
+    attackButton.addEventListener("click", (e) =>
+    {
+        updateZombieHealth(zombieId, zombieLoseHp)
+    }) // addEventListener end
+
+    /* let's make the hero Bean attack a zombie 
+        how do we select Bean from the JSON?
+
+    */
