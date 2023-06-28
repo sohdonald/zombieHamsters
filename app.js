@@ -87,12 +87,18 @@ renderZombies();
     // make a button to allow a hero to attack a zombie
     const attackButton = document.createElement("button")
     attackButton.setAttribute("id", zombieId)
+    attackButton.textContent = "ATTACK"
     attackButton.addEventListener("click", (e) =>
     {
         updateZombieHealth(zombieId, zombieLoseHp)
-    }) // addEventListener end
+    }) // addEventListenegit r end 
+        heroDiv.append(attackButton)
 
+    //where should this div go?
+    
     /* let's make the hero Bean attack a zombie 
         how do we select Bean from the JSON?
-
+        every time Bean attacks, the zombie's hp reduces to a random amount
+        when zombie hp === 0, the zombie is removed from the field
+        text message says that the zombie is defeated
     */
