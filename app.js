@@ -39,9 +39,11 @@ function createZombieCard(zombie) {
     const zombieImageSite = zombie.zombieImage
     zombieImage.setAttribute("src", zombieImageSite)
     zombieImage.setAttribute("class", "funnyImage")
-    const zombieDiv = document.querySelector("#hamster-zombieSpace")
     zombieDiv.append(zombieImage)
 } // createZombieCard end
+
+let selectAZombie = "";
+
 
 function renderZombies() {
     fetch("http://localhost:3000/zombieHamsters")
@@ -56,6 +58,10 @@ function renderZombies() {
 
 renderZombies();
 
+//querySelectors are here
+const zombieDiv = document.querySelector("#hamster-zombieSpace")
+const divHero = document.querySelector("#heroSpace")
+const attackDiv = document.querySelector("#attack-button")
 /* try making 4 zombie hamsters appear on the website 
     need to make sure we are only selecting the zombies*/
     
@@ -67,8 +73,7 @@ renderZombies();
         const heroImageSite = hero.heroImg
         heroImage.setAttribute("src", heroImageSite)
         heroImage.setAttribute("class", "funnyImage")
-        const heroDiv = document.querySelector("#heroSpace")
-        heroDiv.append(heroImage)
+        divHero.append(heroImage)
     } // createHeroCard end
 
     function renderHeroes() {
@@ -85,16 +90,28 @@ renderZombies();
     renderHeroes();
 
     // make a button to allow a hero to attack a zombie
-    const attackButton = document.createElement("button")
-    attackButton.setAttribute("id", zombieId)
-    attackButton.textContent = "ATTACK"
+    const attackButton = document.createElement("img")
+    attackButton.src = "./zombieHamsterImages/heroes/attackButtonv0.svg"
+    attackButton.setAttribute("class", "attackButt")
     attackButton.addEventListener("click", (e) =>
     {
-        updateZombieHealth(zombieId, zombieLoseHp)
-    }) // addEventListenegit r end 
-        heroDiv.append(attackButton)
+        console.log("attack")
+    }) // addEventListener end
+        attackDiv.append(attackButton)
 
-    //where should this div go?
+    /*change the hero's name each time attack button is clicked
+    by order of id
+    */    
+    const heroTurn = document.querySelector("#heroTurn")
+    function getHeroName(hero) {
+        heroTurn.addEventListener("change", () => {
+
+        })
+        const heroName = hero.heroName
+        heroTurn.textContent = `It's ${heroName}'s turn to attack`
+    }
+    heroTurn.append(getHeroName)
+   
     
     /* let's make the hero Bean attack a zombie 
         how do we select Bean from the JSON?

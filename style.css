@@ -3,3 +3,9 @@
     height: 15rem;
     width: auto;
 }
+
+.attackButt {
+    justify-self: left;
+    width: 8rem;
+    height: auto;
+}
