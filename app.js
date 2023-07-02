@@ -99,18 +99,33 @@ const attackDiv = document.querySelector("#attack-button")
     }) // addEventListener end
         attackDiv.append(attackButton)
 
-    /*change the hero's name each time attack button is clicked
-    by order of id
-    */    
-    const heroTurn = document.querySelector("#heroTurn")
-    function getHeroName(hero) {
-        heroTurn.addEventListener("change", () => {
+    /* 
+    change the hero's name each time attack button 
+    is clicked by order of id
+    */
 
-        })
-        const heroName = hero.heroName
-        heroTurn.textContent = `It's ${heroName}'s turn to attack`
+    //const changeHero = document.querySelector("#change-hero")   
+    const heroTurn = document.querySelector("#heroTurn")
+
+    // heroTurn.addEventListener("change", (hero) => {
+    //     heroTurn.textContent = `${hero.target.value}'s turn to attack`
+    // })
+    
+    function changeHero(hero) {
+        heroTurn.textContent = `${hero.target.value}'s turn to attack`
+        let heroId = divHero.hero.id
+        let heroName = divHero.hero.heroName
+        if(heroId > 4) {
+            heroId++
+        } else {
+            heroId === 0
+        }
+        
+        if(attackButton === "clicked") {
+            
+        }
     }
-    heroTurn.append(getHeroName)
+
    
     
     /* let's make the hero Bean attack a zombie 
