@@ -62,6 +62,7 @@ renderZombies();
 const zombieDiv = document.querySelector("#hamster-zombieSpace")
 const divHero = document.querySelector("#heroSpace")
 const attackDiv = document.querySelector("#attack-button")
+const heroTurn = document.querySelector("#heroTurn")
 /* try making 4 zombie hamsters appear on the website 
     need to make sure we are only selecting the zombies*/
     
@@ -75,12 +76,16 @@ const attackDiv = document.querySelector("#attack-button")
         heroImage.setAttribute("class", "funnyImage")
         divHero.append(heroImage)
     } // createHeroCard end
+    
+    let allHeroes
 
     function renderHeroes() {
         fetch("http://localhost:3000/nakedMoleHeroes")
         .then((res) => res.json())
         .then( (moleHeroes) => {
             console.log(moleHeroes);
+            allHeroes = moleHeroes;
+            console.log(allHeroes)
             moleHeroes.forEach(element => {
                 createHeroCard(element) 
             }); // forEach end
@@ -96,35 +101,60 @@ const attackDiv = document.querySelector("#attack-button")
     attackButton.addEventListener("click", (e) =>
     {
         console.log("attack")
+        /*
+        need counter for id
+        reset after array ends
+        id < allHeroes.length
+        */
+
+
+       allHeroes.forEach((hero) => {
+        console.log(hero)
+        heroTurn.textContent = `${hero.heroName}'s turn to attack`
+        setTimeout
+        //stop until next click
+       })
+
     }) // addEventListener end
         attackDiv.append(attackButton)
 
     /* 
-    change the hero's name each time attack button 
+    display the hero's name each time attack button 
     is clicked by order of id
+    
+    when clicked,
+
+    display 
+    "Bean's turn to attack"
+
+    2nd click
+    "Pillow's turn to attack"
+
+    3rd click
+    "Squishy's turn to attack"
     */
 
     //const changeHero = document.querySelector("#change-hero")   
-    const heroTurn = document.querySelector("#heroTurn")
+
 
     // heroTurn.addEventListener("change", (hero) => {
     //     heroTurn.textContent = `${hero.target.value}'s turn to attack`
     // })
     
-    function changeHero(hero) {
-        heroTurn.textContent = `${hero.target.value}'s turn to attack`
-        let heroId = divHero.hero.id
-        let heroName = divHero.hero.heroName
-        if(heroId > 4) {
-            heroId++
-        } else {
-            heroId === 0
-        }
+    // function changeHero(hero) {
+    //     heroTurn.textContent = `${heroName}'s turn to attack`
+    //     let heroId = divHero.hero.id
+    //     let heroName = divHero.hero.heroName
+    //     if(heroId > 4) {
+    //         heroId++
+    //     } else {
+    //         heroId === 0
+    //     }
         
-        if(attackButton === "clicked") {
+    //     if(attackButton === "clicked") {
             
-        }
-    }
+    //     }
+    // }
 
    
     
